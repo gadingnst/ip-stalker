@@ -9,7 +9,6 @@ export default new Vuex.Store({
   }),
   mutations: {
     setIpInfo(state, data) {
-      console.log(data)
       state.ipInfo = {
         type: {
           label: 'Type',
