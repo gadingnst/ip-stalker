@@ -1,6 +1,6 @@
 {
-  "name": "ip-stalker",
-  "short_name": "ip-stalker",
+  "name": "IP Stalker",
+  "short_name": "IP Stalker",
   "icons": [
     {
       "src": "./img/icons/android-chrome-192x192.png",
