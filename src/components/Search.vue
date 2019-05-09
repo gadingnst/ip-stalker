@@ -1,20 +1,18 @@
 <template>
-  <div>
-    <div class="form">
-      <fieldset class="form-group form-success">
-        <label for="ipaddr">IP Address:</label>
-        <input v-model="address" id="ipaddr" type="text" placeholder="Any Public IP Address" class="form-control">
-        <div v-if="error.trim().length > 0" class="help-block" style="color: crimson">
-          {{ error }}
-        </div>
-      </fieldset>
-      <div class="form-actions" style="text-align: right">
-        <button style="margin: 5px 0;" class="btn btn-success btn-ghost" @click="stalk()">
-          🔍 Go Stalk !
-        </button>
+  <div class="form">
+    <fieldset class="form-group form-success">
+      <label for="ipaddr">IP Address:</label>
+      <input v-model="address" id="ipaddr" type="text" placeholder="Any Public IP Address" class="form-control">
+      <div v-if="error.trim().length > 0" class="help-block" style="color: crimson">
+        {{ error }}
       </div>
-      <div v-if="loading" class="loading"></div>
+    </fieldset>
+    <div class="form-actions" style="text-align: right">
+      <button style="margin: 5px 0;" class="btn btn-success btn-ghost" @click="stalk()">
+        🔍 Go Stalk !
+      </button>
     </div>
+    <div v-if="loading" class="loading"></div>
   </div>
 </template>
 
