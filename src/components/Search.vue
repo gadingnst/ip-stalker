@@ -35,13 +35,18 @@ export default {
       
       try {
         const response = await window.fetch(`${process.env.VUE_APP_API_ENDPOINT}${this.address}`)
+        if (response.status === 400) {
+          throw new Error(`You've entered invalid IP Address!`)
+        } else if (response.status !== 200) {
+          throw new Error(`Unknown Error, Check your Connection!`)
+        }
         const result = await response.json()
         this.setIpInfo({ ...result })
       } catch (err) {
-        this.error = `You've entered invalid IP Address!`
+        this.error = err.message
       }
 
-      this.loading = false      
+      this.loading = false
     }
   }
 }
