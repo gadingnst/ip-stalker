@@ -32,9 +32,13 @@ export default {
     async stalk() {
       this.error = ''
       this.loading = true
-      const response = await window.fetch(`${process.env.VUE_APP_API_ENDPOINT}${this.address}`)
-      const result = await response.json()
-      this.setIpInfo({ ...result })
+      try {
+        const response = await window.fetch(`${process.env.VUE_APP_API_ENDPOINT}${this.address}`)
+        const result = await response.json()
+        this.setIpInfo({ ...result })
+      } catch (err) {
+        console.log(err)
+      }
       this.loading = false      
     }
   }
