@@ -32,8 +32,9 @@ export default {
     async stalk() {
       this.error = ''
       this.loading = true
-      
+
       try {
+        if (this.address.trim().length === 0 ) throw new Error('IP Address must not be empty!')
         const response = await window.fetch(`${process.env.VUE_APP_API_ENDPOINT}${this.address}`)
         if (response.status === 400) {
           throw new Error(`You've entered invalid IP Address!`)
