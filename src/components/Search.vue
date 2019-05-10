@@ -67,8 +67,4 @@ export default {
   margin: 0 auto;
   text-align: center;
 }
-.loading {
-  height: 80px;
-  width: 80px;
-}
 </style>
