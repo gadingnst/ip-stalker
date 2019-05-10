@@ -1,5 +1,7 @@
 # IP Stalker App
 
+[![Build Status](https://travis-ci.org/sutanlab/ip-stalker.svg?branch=master)](https://travis-ci.org/sutanlab/ip-stalker)
+
 ## Project setup
 ```
 yarn install
