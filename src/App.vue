@@ -20,13 +20,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-#github-ribbon {
-  background: black;
-  position: absolute;
-  top: 0;
-  right: 0;
-  border: 0;
-}
-</style>
