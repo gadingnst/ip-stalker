@@ -8,8 +8,8 @@
       </div>
     </fieldset>
     <div class="form-actions" style="text-align: right">
-      <button style="margin: 5px" class="btn btn-success btn-ghost" @click="stalk()">
-        🔍 Go Stalk !&nbsp;
+      <button :disabled="loading" style="margin: 5px" class="btn btn-success btn-ghost" @click="stalk()">
+        {{ loading ? 'Loading&hellip;' : '🔍 Go Stalk !' }}&nbsp;
         <span v-if="loading" class="loading" />
       </button>
       <button v-if="Object.keys(ipInfo).length > 0" style="margin: 5px" class="btn btn-default btn-ghost" @click="reset()">
@@ -46,7 +46,7 @@ export default {
         if (this.address.trim().length === 0 ) throw new Error('IP Address must not be empty!')
         const response = await window.fetch(`${process.env.VUE_APP_API_ENDPOINT}${this.address}`)
         if (response.status === 400) {
-          throw new Error(`You've entered invalid IP Address!`)
+          throw new Error(`You've entered invalid IP Address format!`)
         } else if (response.status !== 200) {
           throw new Error(`Unknown Error, Check your Connection!`)
         }
