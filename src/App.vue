@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <Github url="https://github.com/sutanlab/ip-stalker" />
     <h1>IP Stalker | By: Sutanlab</h1>
     <hr />
     <Search />
@@ -9,11 +10,23 @@
 
 <script>
 import Search from './components/Search'
+import Github from './components/Github'
 
 export default {
   components: {
+    Github,
     Search,
     Info: () => import('./components/Info')
   }
 }
 </script>
+
+<style scoped>
+#github-ribbon {
+  background: black;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 0;
+}
+</style>
