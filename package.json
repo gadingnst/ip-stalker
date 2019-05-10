@@ -7,7 +7,7 @@
     "build": "vue-cli-service build --mode production",
     "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup",
     "lint": "vue-cli-service lint",
-    "postinstall": "cd .env.example .env"
+    "postinstall": "cp .env.example .env"
   },
   "dependencies": {
     "core-js": "^2.6.5",
