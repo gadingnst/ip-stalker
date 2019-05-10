@@ -1,15 +1,24 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import createPersistedState from 'vuex-persistedstate'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
+  plugins: [createPersistedState()],
   state: () => ({
     ipInfo: {}
   }),
   mutations: {
+    resetIpInfo(state) {
+      state.ipInfo = {}
+    },
     setIpInfo(state, data) {
       state.ipInfo = {
+        ip: {
+          label: 'IP Address',
+          value: data.ip
+        },
         type: {
           label: 'Type',
           value: data.type

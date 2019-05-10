@@ -8,16 +8,19 @@
       </div>
     </fieldset>
     <div class="form-actions" style="text-align: right">
-      <button style="margin: 5px 0;" class="btn btn-success btn-ghost" @click="stalk()">
-        🔍 Go Stalk !
+      <button style="margin: 5px" class="btn btn-success btn-ghost" @click="stalk()">
+        🔍 Go Stalk !&nbsp;
+        <span v-if="loading" class="loading" />
+      </button>
+      <button v-if="Object.keys(ipInfo).length > 0" style="margin: 5px" class="btn btn-default btn-ghost" @click="reset()">
+        🔄 Clear
       </button>
     </div>
-    <div v-if="loading" class="loading"></div>
   </div>
 </template>
 
 <script>
-import { mapMutations } from 'vuex'
+import { mapState, mapMutations } from 'vuex'
 
 export default {
   data: () => ({
@@ -25,9 +28,15 @@ export default {
     error: '',
     loading: false
   }),
+  computed: {
+    ...mapState({
+      ipInfo: state => state.ipInfo
+    })
+  },
   methods: {
     ...mapMutations({
-      setIpInfo: 'setIpInfo'
+      setIpInfo: 'setIpInfo',
+      reset: 'resetIpInfo'
     }),
     async stalk() {
       this.error = ''
