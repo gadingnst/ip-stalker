@@ -1,5 +1,5 @@
 <template>
-  <div style="text-align: center">
+  <div style="text-align: center; margin: 5px">
     <h2 style="margin: 0; color: #4CAF50">Lokasi IP</h2>
     <iframe 
       width="300" 
@@ -8,7 +8,7 @@
       scrolling="no" 
       marginheight="0" 
       marginwidth="0" 
-      :src="`https://maps.google.com/maps?q=${latitude},${longitude}&hl=es;z=14&amp;output=embed`"
+      :src="`https://www.google.com/maps/embed/v1/place?q=${latitude},${longitude}&zoom=${zoom}&amp;key=${apiKey}`"
     />
   </div>
 </template>
@@ -23,8 +23,15 @@ export default {
     longitude: {
       type: Number,
       default: 0
+    },
+    zoom: {
+      type: Number,
+      default: 15
     }
-  }
+  },
+  data: () => ({
+    apiKey: process.env.VUE_APP_API_KEY
+  })
 }
 </script>
 

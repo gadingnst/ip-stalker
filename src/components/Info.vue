@@ -1,6 +1,11 @@
 <template>
   <div class="form">
-    <Map v-if="Object.keys(info).length > 0" :latitude="info.latitude.value || 0" :longitude="info.longitude.value || 0" />
+    <Map
+      v-if="Object.keys(info).length > 0"
+      :latitude="info.latitude.value || 0"
+      :longitude="info.longitude.value || 0"
+      :zoom="7"
+    />
     <fieldset v-for="(data, i) in info" class="form-group" :key="i">
       <label>{{ data.label }}</label>
       <input
