@@ -23,7 +23,8 @@ route.get('/:addr', async (req, res) => {
   if (valid) {
     try {
       const result = await Promise.all(endpoints(req.params.addr).map(endpoint => (
-        fetch(endpoint).then(({ data }) => data)
+        fetch(endpoint)
+          .then(({ data }) => data)
           .catch(({ response }) => console.log(response.data.message))
       )))
       
