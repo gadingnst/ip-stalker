@@ -29,7 +29,7 @@ route.get('/:addr', async (req, res) => {
       )))
       
       res.status(200).send(result.reduce((acc, cur) => ({
-        ...acc, ...cur
+        ...acc,...cur
       })))
     } catch (err) {
       console.error(err)
