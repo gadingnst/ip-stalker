@@ -44,7 +44,7 @@ export default {
 
       try {
         if (this.address.trim().length === 0 ) throw new Error('IP Address must not be empty!')
-        const response = await window.fetch(`https://api-ipstalker.now.sh?addr=${this.address}`)
+        const response = await window.fetch(`/.netlify/functions/api/${this.address}`)
         if (response.status === 400) {
           throw new Error(`You've entered invalid IP Address format!`)
         } else if (response.status !== 200) {
