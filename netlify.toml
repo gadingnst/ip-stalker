@@ -1,3 +1,8 @@
 [build]
   command = "npm install && npm run build"
   functions = "functions"
+
+[[redirects]]
+  from = "https://jolly-goldstine-8325cb.netlify.com/*"
+  to = "https://ipstalker.sutanlab.id/:splat"
+  status = 301
