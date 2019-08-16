@@ -7,8 +7,8 @@
       frameborder="0" 
       scrolling="no" 
       marginheight="0" 
-      marginwidth="0" 
-      :src="`https://www.google.com/maps/embed/v1/place?q=${latitude},${longitude}&zoom=${zoom}&amp;key=${apiKey}`"
+      marginwidth="0"
+      :src="`https://maps.google.com/maps?q=${latitude},${longitude}&z=${zoom}&amp;output=embed`"
     />
   </div>
 </template>
@@ -28,10 +28,7 @@ export default {
       type: Number,
       default: 15
     }
-  },
-  data: () => ({
-    apiKey: process.env.VUE_APP_API_KEY
-  })
+  }
 }
 </script>
 
