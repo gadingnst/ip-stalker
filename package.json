@@ -4,7 +4,7 @@
   "description": "IP Stalker App with serverless service.",
   "main": "server.js",
   "scripts": {
-    "build": "vue-cli-service build --mode production && netlify-lambda build service",
+    "build": "vue-cli-service build --mode production; netlify-lambda build service",
     "start": "vue-cli-service serve", 
     "server": "node server.js",
     "lint": "vue-cli-service lint"
