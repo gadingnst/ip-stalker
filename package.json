@@ -1,0 +1,36 @@
+{
+  "name": "ipstalker",
+  "version": "1.0.0",
+  "description": "IP Stalker App with serverless service.",
+  "main": "server.js",
+  "scripts": {
+    "build": "vue-cli-service build --mode production && netlify-lambda build api",
+    "start": "vue-cli-service serve", 
+    "server": "node server.js",
+    "lint": "vue-cli-service lint"
+  },
+  "author": "Sutan Nasution.",
+  "dependencies": {
+    "core-js": "2.6.9",
+    "hack": "0.8.1",
+    "register-service-worker": "1.6.2",
+    "vue": "2.6.10",
+    "vuex": "3.1.1",
+    "vuex-persistedstate": "2.5.4"
+  },
+  "devDependencies": {
+    "axios": "^0.19.0",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "netlify-lambda": "^0.4.0",
+    "serverless-http": "^1.6.0",
+    "babel-eslint": "10.0.2",
+    "@vue/cli-plugin-babel": "3.10.0",
+    "@vue/cli-plugin-eslint": "3.10.0",
+    "@vue/cli-plugin-pwa": "3.10.0",
+    "@vue/cli-service": "3.10.0",
+    "eslint": "5.16.0",
+    "eslint-plugin-vue": "5.2.3",
+    "vue-template-compiler": "2.6.10"
+  }
+}
