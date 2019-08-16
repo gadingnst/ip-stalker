@@ -2,13 +2,13 @@
   <div class="form">
     <fieldset class="form-group form-success">
       <label for="ipaddr">IP Address:</label>
-      <input v-model="address" id="ipaddr" type="text" placeholder="Any Public IP Address" class="form-control">
+      <input v-model="address" id="ipaddr" type="text" placeholder="Any Public IP Address" class="form-control" @keyup.enter="stalk">
       <div v-if="error.trim().length > 0" class="help-block" style="color: crimson">
         {{ error }}
       </div>
     </fieldset>
     <div class="form-actions" style="text-align: right">
-      <button :disabled="loading" style="margin: 5px" class="btn btn-success btn-ghost" @click="stalk()">
+      <button :disabled="loading" style="margin: 5px" class="btn btn-success btn-ghost" @click="stalk">
         {{ loading ? 'Loading&hellip;' : '🔍 Go Stalk !' }}&nbsp;
         <span v-if="loading" class="loading" />
       </button>
