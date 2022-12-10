@@ -28,7 +28,7 @@
     "body-parser": "^1.18.3",
     "eslint": "5.16.0",
     "eslint-plugin-vue": "5.2.3",
-    "express": "^4.16.3",
+    "express": "^4.17.3",
     "netlify-lambda": "^1.4.0",
     "serverless-http": "^1.6.0",
     "vue-template-compiler": "2.6.10"
